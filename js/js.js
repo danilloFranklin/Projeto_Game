@@ -18,12 +18,12 @@ var perdidos=0;
 var podeAtirar=true;
 var fimdejogo=false;
 var jogo = {};
-var velocidade=3;
+var velocidade=2;
 var posicaoY = parseInt(Math.random() * 334);
 var TECLA = {
-	W: 38,
-	S: 40,
-	D: 32
+	up: 38,
+	down: 40,
+	fire: 32
 	}
 
 	jogo.pressionou = [] ;
@@ -81,7 +81,7 @@ function movefundo() {
 
 function movejogador() {
 	
-		if (jogo.pressionou[TECLA.W]) {
+		if (jogo.pressionou[TECLA.up]) {
 			var topo = parseInt($("#jogador").css("top"));
 			$("#jogador").css("top",topo-10);
 		
@@ -91,7 +91,7 @@ function movejogador() {
 			}
 		}
 
-		if (jogo.pressionou[TECLA.S]) {
+		if (jogo.pressionou[TECLA.down]) {
 			
 			var topo = parseInt($("#jogador").css("top"));
 			$("#jogador").css("top",topo+10);	
@@ -102,7 +102,7 @@ function movejogador() {
 		
 		}
 		
-		if (jogo.pressionou[TECLA.D]) {
+		if (jogo.pressionou[TECLA.fire]) {
 
 			disparo();
 			//Chama função Disparo	
